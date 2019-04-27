@@ -47,3 +47,9 @@ TagManager:
   - name: Player
     uniqueID: 3822659795
     locked: 0
+  - name: VisionCone
+    uniqueID: 3126519629
+    locked: 0
+  - name: Building/Object
+    uniqueID: 1054631369
+    locked: 0
