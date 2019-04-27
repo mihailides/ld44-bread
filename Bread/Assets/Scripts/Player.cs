@@ -27,6 +27,7 @@ public class Player : MonoBehaviour
         float moveHorizontal = Input.GetAxis ("Horizontal");
         float moveVertical = Input.GetAxis ("Vertical");
         Vector3 movement = new Vector3 (moveHorizontal, moveVertical, 0);
+        movement = Vector3.ClampMagnitude(movement, 1);
         
         var moving = (Math.Abs(moveHorizontal) > 0.1 || Math.Abs(moveVertical) > 0.1);
         if (moving)
