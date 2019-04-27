@@ -54,7 +54,7 @@ public class TwitterScript : MonoBehaviour
 
         for (var i = 0; i < 15; i++)
         {
-            var newTweet = Instantiate(feed);
+            var newTweet = Instantiate(tweet);
             newTweet.transform.SetParent(feed.transform, false);
         }
     }
