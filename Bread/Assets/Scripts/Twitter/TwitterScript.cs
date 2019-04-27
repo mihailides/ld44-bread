@@ -6,6 +6,7 @@ using Random = System.Random;
 
 public class TwitterScript : MonoBehaviour
 {
+    private readonly PersonNameGenerator nameGenerator = new PersonNameGenerator();
     private List<TwitterItem> tweets = new List<TwitterItem>();
 
     private readonly ShuffleBag<string> desperationBag = new ShuffleBag<string>(
@@ -25,7 +26,6 @@ public class TwitterScript : MonoBehaviour
         "omfg you won't believe who i just saw. dead",
         "hot tip: just saw {0} leave",
         "{0} is so cancelled right now",
-        "{0} {0} {0} wow",
         "can't believe how different {0} looks",
         "{0} SPOTTED"
     );
@@ -47,13 +47,16 @@ public class TwitterScript : MonoBehaviour
 
     void Start()
     {
-        tweets.Add(new TwitterItem
+        tweets.Add(GenerateTwitterItem(startBag, false));
+
+        var feed = GameObject.Find("TwitterView");
+        var tweet = GameObject.Find("Tweet");
+
+        for (var i = 0; i < 15; i++)
         {
-            Username = nameBag.Next(),
-            Tweet = startBag.Next(),
-            Timestamp = DateTime.Now,
-            ImageSeed = GetImageSeed
-        });
+            var newTweet = Instantiate(feed);
+            newTweet.transform.SetParent(feed.transform, false);
+        }
     }
 
     void Update()
@@ -63,25 +66,27 @@ public class TwitterScript : MonoBehaviour
 
     public void AddDesperationTweet()
     {
-        tweets.Add(new TwitterItem
-        {
-            Username = nameBag.Next(),
-            Tweet = desperationBag.Next(),
-            Timestamp = DateTime.Now,
-            ImageSeed = GetImageSeed
-        });
+        tweets.Add(GenerateTwitterItem(desperationBag, false));
     }
 
     public void AddPictureTweet()
     {
-        tweets.Add(new TwitterItem
-        {
-            Username = nameBag.Next(),
-            Tweet = pictureBag.Next(),
-            Timestamp = DateTime.Now,
-            ImageSeed = GetImageSeed
-        });
+        tweets.Add(GenerateTwitterItem(pictureBag, true));
     }
 
+    private TwitterItem GenerateTwitterItem(ShuffleBag<string> bag, bool withImage)
+    {
+        string famousPerson = "FamousPerson";
+        
+        return new TwitterItem
+        {
+            Username = String.Format(nameBag.Next(), famousPerson),
+            Name = nameGenerator.GenerateRandomFirstAndLastName(),
+            Tweet = String.Format(bag.Next(), famousPerson),
+            Timestamp = DateTime.Now,
+            ImageSeed = withImage ? GetImageSeed : (int?)null
+        };
+    }
+    
     private int GetImageSeed => new Random().Next(0, int.MaxValue);
 }
