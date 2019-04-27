@@ -4,15 +4,22 @@ using UnityEngine;
 
 public class Paparazzi : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public float secondsBeforeRotate = 1;
+    public float angleToMove = 90;
+    private float timer;
+
     void Start()
-    {
-        
+    {   
+        timer = 0.0f;
     }
 
-    // Update is called once per frame
-    void Update()
+    void FixedUpdate() 
     {
-        
+        timer += Time.deltaTime;
+        if (timer > secondsBeforeRotate) 
+        {
+            timer -= secondsBeforeRotate;
+            transform.Rotate(0, 0, angleToMove);
+        }      
     }
 }
