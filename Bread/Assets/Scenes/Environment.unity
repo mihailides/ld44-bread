@@ -1896,6 +1896,26 @@ PrefabInstance:
       value: 
       objectReference: {fileID: -8331286036511151730, guid: 173dd38c51babd44bae20b587f1484fc,
         type: 3}
+    - target: {fileID: 2078883605527290820, guid: c97f78f73bd910b418a385a67367170d,
+        type: 3}
+      propertyPath: m_FlipX
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2078883605527290820, guid: c97f78f73bd910b418a385a67367170d,
+        type: 3}
+      propertyPath: m_FlipY
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2078883605527290816, guid: c97f78f73bd910b418a385a67367170d,
+        type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2078883605527290816, guid: c97f78f73bd910b418a385a67367170d,
+        type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c97f78f73bd910b418a385a67367170d, type: 3}
 --- !u!1001 &7505255088042853129
@@ -1965,5 +1985,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7505255087392402902, guid: 4dad44bf7b363ac49be8a749ac6b38d0,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 7167175253411897160, guid: e23ed5a3a38428d42a4e2c2803a27e50,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4dad44bf7b363ac49be8a749ac6b38d0, type: 3}
