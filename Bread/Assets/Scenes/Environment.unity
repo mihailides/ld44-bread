@@ -981,10 +981,10 @@ GameObject:
   - component: {fileID: 1793230720}
   - component: {fileID: 1793230719}
   - component: {fileID: 1793230718}
-  - component: {fileID: 1793230717}
   - component: {fileID: 1793230716}
+  - component: {fileID: 1793230717}
   m_Layer: 5
-  m_Name: Canvas
+  m_Name: BlackScreen
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1002,6 +1002,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9659b2c1c8e6b7d489ae6b908622daa6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  image: {fileID: 1793230717}
 --- !u!114 &1793230717
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1015,7 +1016,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 0.9098039}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
