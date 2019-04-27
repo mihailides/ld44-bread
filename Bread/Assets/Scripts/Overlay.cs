@@ -16,16 +16,25 @@ public class Overlay : MonoBehaviour
 
     void Update()
     {
-        timer = Time.deltaTime;
-        if (timer > 1) 
+        if (Input.GetKeyDown("q")) 
         {
-            ScreenFlash();
-            timer -= 1;
+            StartCoroutine(ScreenFlash());
         }
+
     }
 
-    private void ScreenFlash() 
-    {   
+    IEnumerator ScreenFlash() 
+    {  
+        float flashTimer = 0.0f;
+        var originalAlpha = image.color.a;
+        var illuminatedView = image.color;
 
+        illuminatedView.a = 0f;
+        image.color = illuminatedView;
+
+        yield return new WaitForSeconds(0.1f);
+
+        illuminatedView.a = originalAlpha;
+        image.color = illuminatedView;
     }
 }
