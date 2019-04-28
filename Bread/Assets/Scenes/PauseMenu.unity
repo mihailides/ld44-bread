@@ -528,7 +528,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_text: Play
+  m_text: Continue
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: f3e1935e2297517448758c93ecc38c42, type: 2}
   m_sharedMaterial: {fileID: 8166938439738960554, guid: f3e1935e2297517448758c93ecc38c42,
@@ -598,7 +598,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 652297808}
-    characterCount: 4
+    characterCount: 8
     spriteCount: 0
     spaceCount: 0
     wordCount: 1
@@ -644,7 +644,7 @@ GameObject:
   - component: {fileID: 768379566}
   - component: {fileID: 768379567}
   m_Layer: 5
-  m_Name: PlayButton
+  m_Name: ContinueButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -714,7 +714,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1226229174}
-        m_MethodName: StartGame
+        m_MethodName: ContinueGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1212,7 +1212,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1226229173}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4b738942b354d1b459bb5028f0c2eef6, type: 3}
+  m_Script: {fileID: 11500000, guid: c1650945063f9704f9e5bba402aa29af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!4 &1226229175
