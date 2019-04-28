@@ -6,18 +6,27 @@ public class MoveTowardsPlayer : MonoBehaviour
 {
     public Component player;
     public float speed;
+    public bool moving = true;
     
+    private Animator animator;
     private AStarPathfinding aStarPathfinding;
     
     // Start is called before the first frame update
     void Start()
     {
         aStarPathfinding = GetComponent<AStarPathfinding>();
+        animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (!moving)
+        {
+            animator.SetBool("moving", false);
+            return;
+        }
+        
         var findPath = aStarPathfinding.FindPath(transform.position, player.transform.position);
 
         // Nowhere to path-find.
@@ -36,9 +45,12 @@ public class MoveTowardsPlayer : MonoBehaviour
             
         // Rotate towards next cell.
         transform.up = Vector3.Lerp(transform.up, target, 0.1f);
-            
+        
         // Move towards next cell.
         var movement = Vector3.ClampMagnitude(target, 1);
+        
+        animator.SetBool("moving", target.magnitude > 1);
+
         transform.position += movement * speed * Time.deltaTime;
     }
 }
