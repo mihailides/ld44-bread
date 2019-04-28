@@ -2,15 +2,38 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
 
 public class Player : MonoBehaviour
 {
     public float speed;
     public Animator animator;
+    float timer = 0;
+    
+    /** Desperation values */
+    public float startingDesperation = 0;
+    public float currentDesperation;
+    public Slider desperationSlider;
+    public float periodicDesperationRate = 1;
+    public float periodicDesperationTimeOut = 1;
+    public float desperationLossPerPhoto = 10;
+    public float maxDesperation = 100;
+
+    /** Money values */
+    public float startingMoney = 1000000;
+    public float currentMoney;
+    public float startingLossPercentage = 10;
+    public GameObject moneyTextObject;
+    private TMPro.TextMeshProUGUI moneyText;
 
     void Start()
     {
         animator = GetComponent<Animator>();
+        currentDesperation = startingDesperation;
+        currentMoney = startingMoney;
+        moneyText = moneyTextObject.GetComponent<TMPro.TextMeshProUGUI>();
+        moneyText.text = "$" + startingMoney.ToString();
     }
 
     void FixedUpdate()
@@ -20,6 +43,12 @@ public class Player : MonoBehaviour
 
     void Update()
     {
+        timer += Time.deltaTime;
+        if (timer > periodicDesperationTimeOut) 
+        {
+            PeriodicallyIncreaseDesperation();
+            timer -= periodicDesperationTimeOut;
+        }
     }
 
     private void MoveCharacter() 
@@ -39,6 +68,57 @@ public class Player : MonoBehaviour
         animator.SetBool("moving", moving);
         
         transform.position += movement * speed * Time.deltaTime;
-        // transform.Translate(moveHorizontal * speed, moveVertical * speed, 0);
+    }
+
+    /** Increase desperation over time */
+    private void PeriodicallyIncreaseDesperation() {
+        float possibleDesperation = currentDesperation + periodicDesperationRate;
+        if (currentDesperation == maxDesperation || possibleDesperation >= maxDesperation) 
+        {
+            if (currentDesperation != maxDesperation) 
+            {
+                currentDesperation = maxDesperation;
+            }
+        } 
+        else 
+        {
+            currentDesperation += periodicDesperationRate;
+        }
+        desperationSlider.value = currentDesperation;
+    }
+
+    /** Use this function when a photo is taken. Desperation decreases, but so does money. */
+    public void LoseDesperationAndMoney() 
+    {
+        // Maybe take in whether it was a chaser or a static mob? And change val based on that.
+        if (currentMoney < 1000) 
+        {
+            currentMoney -= 100;
+        }
+        else if (currentMoney < 100) 
+        {
+            currentMoney -= 3.75f;
+        } 
+        else 
+        {
+            currentMoney -= currentMoney / startingLossPercentage;
+        }
+
+        // Update desperation
+        if (currentDesperation <= desperationLossPerPhoto) 
+        {   
+            currentDesperation = 0;
+        }
+        else 
+        {
+            currentDesperation -= desperationLossPerPhoto;
+        }
+        SetMoneyText(currentMoney);
+        desperationSlider.value = currentDesperation;
+    }
+
+    public void SetMoneyText(float currentMoney) 
+    {
+        moneyText.text = "$" + currentMoney.ToString();
     }
 }
