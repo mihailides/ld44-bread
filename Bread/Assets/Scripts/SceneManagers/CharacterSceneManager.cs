@@ -1,5 +1,7 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using TMPro;
 
@@ -20,7 +22,13 @@ public class CharacterSceneManager : MonoBehaviour
 
     public void OKClicked()
     {
-        StaticData.Name = nameText.text;
+        if (nameText.text.Length == 0) return;
+        
+        var text = nameText.text.Substring(0, Math.Min(nameText.text.Length, 25));
+        text = string.Concat(text.Where(c => char.IsWhiteSpace(c) || char.IsLetterOrDigit(c)));
+
+        StaticData.Name = text;
+        
         UnityEngine.SceneManagement.SceneManager.LoadScene(3);
     }
 }
