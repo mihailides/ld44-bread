@@ -85,7 +85,7 @@ GameObject:
   - component: {fileID: 8853900900823215911}
   - component: {fileID: 8853900900823215910}
   m_Layer: 5
-  m_Name: HealthSlider
+  m_Name: DesperationSlider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -628,7 +628,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8853900902515344011}
   m_Layer: 5
-  m_Name: HealthUI
+  m_Name: HUD_UI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
