@@ -10,6 +10,7 @@ public class TwitterScript : MonoBehaviour
 {
     private GameObject feed;
     private GameObject originalTweet;
+    private bool hasStartTweet;
 
     private readonly PersonNameGenerator nameGenerator = new PersonNameGenerator();
 
@@ -19,8 +20,8 @@ public class TwitterScript : MonoBehaviour
     );
     
     private readonly ShuffleBag<string> pictureBag = new ShuffleBag<string>(
-        "you won't believe this picture we just took\n\n#{0}",
-        "omfg look at this picture i just took of {0}",
+        "you won't believe how {0} looks today!!\n\n#{0}",
+        "omfg i just saw {0} and they look like a wreck",
         "HAHAHA {0} OMG"
     );
 
@@ -53,19 +54,8 @@ public class TwitterScript : MonoBehaviour
     {
         feed = GameObject.Find("TwitterView");
         originalTweet = GameObject.Find("Tweet");
-
-        AddTweet(GenerateTwitterItem(startBag, false));
-
-        StartCoroutine(test());
     }
 
-    IEnumerator test()
-    {
-        yield return new WaitForSeconds(5);
-       
-        AddDesperationTweet();
-    }
-    
     void Update()
     {
         
@@ -78,7 +68,7 @@ public class TwitterScript : MonoBehaviour
 
     public void AddPictureTweet()
     {
-        AddTweet(GenerateTwitterItem(pictureBag, true));
+        AddTweet(GenerateTwitterItem(pictureBag, false));
     }
 
     private void AddTweet(TwitterItem item)
@@ -101,6 +91,13 @@ public class TwitterScript : MonoBehaviour
     private TwitterItem GenerateTwitterItem(ShuffleBag<string> bag, bool withImage)
     {
         string famousPerson = "FamousPerson";
+
+        // have a start tweet first
+        if (!hasStartTweet)
+        {
+            bag = startBag;
+            hasStartTweet = true;
+        }
         
         return new TwitterItem
         {
