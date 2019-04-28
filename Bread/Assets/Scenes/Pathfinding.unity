@@ -1032,6 +1032,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Paparazzi
       objectReference: {fileID: 0}
+    - target: {fileID: 7505255087392402901, guid: 4dad44bf7b363ac49be8a749ac6b38d0,
+        type: 3}
+      propertyPath: m_Layer
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 7505255087392402921, guid: 4dad44bf7b363ac49be8a749ac6b38d0,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1092,6 +1097,11 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 1909379306}
+    - target: {fileID: 6674843457675308409, guid: 4dad44bf7b363ac49be8a749ac6b38d0,
+        type: 3}
+      propertyPath: m_Layer
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4dad44bf7b363ac49be8a749ac6b38d0, type: 3}
 --- !u!4 &216784216 stripped
@@ -20158,6 +20168,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 2078883605527290827, guid: c97f78f73bd910b418a385a67367170d,
+        type: 3}
+      propertyPath: m_Layer
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 2078883605527290821, guid: c97f78f73bd910b418a385a67367170d,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -20213,6 +20228,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1732830749, guid: c97f78f73bd910b418a385a67367170d, type: 3}
+      propertyPath: m_Layer
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 2078883605527290822, guid: c97f78f73bd910b418a385a67367170d,
         type: 3}
       propertyPath: desperationSlider
@@ -20241,6 +20260,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Paparazzi (Pathfinder)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8474184406407372109, guid: c29a02fec45314891a87cc11fd01a4b3,
+        type: 3}
+      propertyPath: m_Layer
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 8474184406407372145, guid: c29a02fec45314891a87cc11fd01a4b3,
         type: 3}
@@ -20307,5 +20331,10 @@ PrefabInstance:
       propertyPath: grid
       value: 
       objectReference: {fileID: 945549971}
+    - target: {fileID: 4689252919683636705, guid: c29a02fec45314891a87cc11fd01a4b3,
+        type: 3}
+      propertyPath: m_Layer
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c29a02fec45314891a87cc11fd01a4b3, type: 3}

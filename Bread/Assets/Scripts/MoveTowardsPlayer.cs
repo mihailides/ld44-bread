@@ -21,7 +21,11 @@ public class MoveTowardsPlayer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!moving) return;
+        if (!moving)
+        {
+            animator.SetBool("moving", false);
+            return;
+        }
         
         var findPath = aStarPathfinding.FindPath(transform.position, player.transform.position);
 
