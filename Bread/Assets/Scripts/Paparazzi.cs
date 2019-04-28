@@ -4,6 +4,7 @@ public class Paparazzi : MonoBehaviour
 {
     public float lockOnTimeout = 1;
     public float coneAngle = 45;
+    public float coneLength = 5f;
     public float maxRotation = 15;
     public bool rotate;
     public Component player;
@@ -84,7 +85,22 @@ public class Paparazzi : MonoBehaviour
 
     private bool CheckIfPlayerInCone()
     {
-        return true;
+        // Get the direction to the player
+        var dirToPlayer = player.transform.position - transform.position;
+
+        // Cheap return if we are too far away
+        if (dirToPlayer.magnitude > coneLength)
+        {
+            return false;
+        }
+
+        // Find the difference between the direction to the player and our facing direction
+        var diff = Mathf.DeltaAngle(Quaternion.FromToRotation(Vector3.up, dirToPlayer).eulerAngles.z,
+                                    transform.rotation.eulerAngles.z);
+
+        // Abs for easy compare
+        diff = Mathf.Abs(diff);
+        return diff < coneAngle / 2;
     }
     
     private bool CanSeePlayer()
