@@ -8,9 +8,6 @@ public class Paparazzi : MonoBehaviour
     private Random rand;
     private float timer;
     
-    public Component player;
-    private AStarPathfinding aStarPathfinding;
-
     private GameObject blackScreen;
 
     void Start()
@@ -19,14 +16,10 @@ public class Paparazzi : MonoBehaviour
         rand = new Random();
         
         blackScreen = GameObject.Find("BlackScreen");
-        
-        aStarPathfinding = GetComponent<AStarPathfinding>();
-    }
+            }
 
     void FixedUpdate() 
-    {
-        aStarPathfinding.FindPath(transform.position, player.transform.position);
-        
+    {        
         timer += Time.deltaTime;
         if (timer > lockOnTimeout && !tookPicture) 
         {
