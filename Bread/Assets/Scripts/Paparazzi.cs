@@ -5,14 +5,13 @@ public class Paparazzi : MonoBehaviour
     public float lockOnTimeout = 1;
     public float coneAngle = 45;
     public float maxRotation = 15;
-    public bool rotate = true;
+    public bool rotate;
     public Component player;
 
     private System.Random rand;
     private float timer;
     private float originalRotation;
     private GameObject blackScreen;
-    private GameObject hud;
     private AudioSource audioSource;
     private AudioClip[] cameraSounds;
     
