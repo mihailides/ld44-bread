@@ -1,13 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
+using TMPro;
 using Twitter;
 using UnityEngine;
 using Random = System.Random;
 
 public class TwitterScript : MonoBehaviour
 {
+    private GameObject feed;
+    private GameObject originalTweet;
+
     private readonly PersonNameGenerator nameGenerator = new PersonNameGenerator();
-    private List<TwitterItem> tweets = new List<TwitterItem>();
 
     private readonly ShuffleBag<string> desperationBag = new ShuffleBag<string>(
         "anyone seen {0}? heard some juicy stuff",
@@ -47,16 +50,10 @@ public class TwitterScript : MonoBehaviour
 
     void Start()
     {
-        tweets.Add(GenerateTwitterItem(startBag, false));
+        feed = GameObject.Find("TwitterView");
+        originalTweet = GameObject.Find("Tweet");
 
-        var feed = GameObject.Find("TwitterView");
-        var tweet = GameObject.Find("Tweet");
-
-        for (var i = 0; i < 15; i++)
-        {
-            var newTweet = Instantiate(tweet);
-            newTweet.transform.SetParent(feed.transform, false);
-        }
+        AddTweet(GenerateTwitterItem(startBag, false));
     }
 
     void Update()
@@ -66,14 +63,30 @@ public class TwitterScript : MonoBehaviour
 
     public void AddDesperationTweet()
     {
-        tweets.Add(GenerateTwitterItem(desperationBag, false));
+        AddTweet(GenerateTwitterItem(desperationBag, false));
     }
 
     public void AddPictureTweet()
     {
-        tweets.Add(GenerateTwitterItem(pictureBag, true));
+        AddTweet(GenerateTwitterItem(pictureBag, true));
     }
 
+    private void AddTweet(TwitterItem item)
+    {
+        var newTweet = Instantiate(originalTweet);
+
+        var tweetName = newTweet.transform.Find("TweetHolder/HandleHolder/ActualName");
+        tweetName.GetComponent<TMP_Text>().text = item.Name;
+
+        var handle = newTweet.transform.Find("TweetHolder/HandleHolder/Handle");
+        handle.GetComponent<TMP_Text>().text = "@" + item.Username;
+
+        var contents = newTweet.transform.Find("TweetHolder/TweetContents");
+        contents.GetComponent<TMP_Text>().text = item.Tweet;
+
+        newTweet.transform.SetParent(feed.transform, false);
+    }
+    
     private TwitterItem GenerateTwitterItem(ShuffleBag<string> bag, bool withImage)
     {
         string famousPerson = "FamousPerson";
