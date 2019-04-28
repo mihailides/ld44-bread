@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using Random = System.Random;
 
 public class Paparazzi : MonoBehaviour
@@ -7,6 +7,9 @@ public class Paparazzi : MonoBehaviour
     private bool tookPicture;
     private Random rand;
     private float timer;
+    
+    public Component player;
+    private AStarPathfinding aStarPathfinding;
 
     private GameObject blackScreen;
 
@@ -16,10 +19,14 @@ public class Paparazzi : MonoBehaviour
         rand = new Random();
         
         blackScreen = GameObject.Find("BlackScreen");
+        
+        aStarPathfinding = GetComponent<AStarPathfinding>();
     }
 
     void FixedUpdate() 
     {
+        aStarPathfinding.FindPath(transform.position, player.transform.position);
+        
         timer += Time.deltaTime;
         if (timer > lockOnTimeout && !tookPicture) 
         {
