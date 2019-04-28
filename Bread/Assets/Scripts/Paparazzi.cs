@@ -12,6 +12,7 @@ public class Paparazzi : MonoBehaviour
     private float timer;
     private float originalRotation;
     private GameObject blackScreen;
+    private MoveTowardsPlayer moveTowardsPlayer;
     private AudioSource audioSource;
     private AudioClip[] cameraSounds;
     
@@ -22,6 +23,7 @@ public class Paparazzi : MonoBehaviour
         timer = 0.0f;
         rand = new System.Random();
         blackScreen = GameObject.Find("BlackScreen");
+        moveTowardsPlayer = GetComponent<MoveTowardsPlayer>();
         originalRotation = transform.eulerAngles.z;
 
         audioSource = transform.Find("CameraSound").GetComponent<AudioSource>();
@@ -32,7 +34,7 @@ public class Paparazzi : MonoBehaviour
     {
         timer += Time.deltaTime;
 
-        if (rotate)
+        if (rotate && !tookPicture)
         {
             transform.rotation = Quaternion.Euler(0f, 0f, maxRotation * Mathf.Sin(Time.time) + originalRotation);
         }
@@ -65,6 +67,11 @@ public class Paparazzi : MonoBehaviour
             //SendMessage("AddPictureTweet");
         }
 
+        if (moveTowardsPlayer != null)
+        {
+            moveTowardsPlayer.moving = false;
+        }
+        
         player.SendMessage("LoseDesperationAndMoney");
         
         audioSource.PlayOneShot(cameraSounds[Random.Range(0, cameraSounds.Length)]);

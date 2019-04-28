@@ -6,6 +6,7 @@ public class MoveTowardsPlayer : MonoBehaviour
 {
     public Component player;
     public float speed;
+    public bool moving = true;
     
     private Animator animator;
     private AStarPathfinding aStarPathfinding;
@@ -20,6 +21,8 @@ public class MoveTowardsPlayer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (!moving) return;
+        
         var findPath = aStarPathfinding.FindPath(transform.position, player.transform.position);
 
         // Nowhere to path-find.
@@ -42,8 +45,7 @@ public class MoveTowardsPlayer : MonoBehaviour
         // Move towards next cell.
         var movement = Vector3.ClampMagnitude(target, 1);
         
-        var moving = (target.magnitude > 1);
-        animator.SetBool("moving", moving);
+        animator.SetBool("moving", target.magnitude > 1);
 
         transform.position += movement * speed * Time.deltaTime;
     }
