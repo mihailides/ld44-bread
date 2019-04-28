@@ -53,3 +53,9 @@ TagManager:
   - name: Building/Object
     uniqueID: 1054631369
     locked: 0
+  - name: DimOverlay
+    uniqueID: 108767223
+    locked: 0
+  - name: HUD
+    uniqueID: 554765441
+    locked: 0

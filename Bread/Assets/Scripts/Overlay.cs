@@ -25,7 +25,6 @@ public class Overlay : MonoBehaviour
 
     IEnumerator ScreenFlash() 
     {  
-        float flashTimer = 0.0f;
         var originalAlpha = image.color.a;
         var illuminatedView = image.color;
 

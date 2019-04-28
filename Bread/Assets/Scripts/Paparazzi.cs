@@ -20,12 +20,12 @@ public class Paparazzi : MonoBehaviour
         
         blackScreen = GameObject.Find("BlackScreen");
         
-        aStarPathfinding = GetComponent<AStarPathfinding>();
+        // aStarPathfinding = GetComponent<AStarPathfinding>();
     }
 
     void FixedUpdate() 
     {
-        aStarPathfinding.FindPath(transform.position, player.transform.position);
+        // aStarPathfinding.FindPath(transform.position, player.transform.position);
         
         timer += Time.deltaTime;
         if (timer > lockOnTimeout && !tookPicture) 
