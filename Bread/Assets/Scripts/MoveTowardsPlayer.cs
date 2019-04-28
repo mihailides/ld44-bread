@@ -6,6 +6,7 @@ public class MoveTowardsPlayer : MonoBehaviour
 {
     public Component player;
     public float speed;
+    public bool moving = true;
     
     private AStarPathfinding aStarPathfinding;
     
@@ -18,6 +19,8 @@ public class MoveTowardsPlayer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (!moving) return;
+        
         var findPath = aStarPathfinding.FindPath(transform.position, player.transform.position);
 
         // Nowhere to path-find.
