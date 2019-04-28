@@ -12,6 +12,7 @@ public class Paparazzi : MonoBehaviour
     private float timer;
     private float originalRotation;
     private GameObject blackScreen;
+    private GameObject hud;
     private AudioSource audioSource;
     private AudioClip[] cameraSounds;
     
@@ -65,6 +66,8 @@ public class Paparazzi : MonoBehaviour
             //SendMessage("AddPictureTweet");
         }
 
+        player.SendMessage("LoseDesperationAndMoney");
+        
         audioSource.PlayOneShot(cameraSounds[Random.Range(0, cameraSounds.Length)]);
         blackScreen.SendMessage("ScreenFlash");
 
