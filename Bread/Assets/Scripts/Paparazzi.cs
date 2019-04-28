@@ -1,5 +1,4 @@
 using UnityEngine;
-using Random = System.Random;
 
 public class Paparazzi : MonoBehaviour
 {
@@ -9,19 +8,24 @@ public class Paparazzi : MonoBehaviour
     public bool rotate = true;
     public Component player;
 
-    private Random rand;
+    private System.Random rand;
     private float timer;
     private float originalRotation;
     private GameObject blackScreen;
+    private AudioSource audioSource;
+    private AudioClip[] cameraSounds;
     
     private bool tookPicture;
 
     void Start()
     {
         timer = 0.0f;
-        rand = new Random();
+        rand = new System.Random();
         blackScreen = GameObject.Find("BlackScreen");
         originalRotation = transform.eulerAngles.z;
+
+        audioSource = transform.Find("CameraSound").GetComponent<AudioSource>();
+        cameraSounds = Resources.LoadAll<AudioClip>("Sounds");
     }
 
     void FixedUpdate() 
@@ -61,6 +65,7 @@ public class Paparazzi : MonoBehaviour
             //SendMessage("AddPictureTweet");
         }
 
+        audioSource.PlayOneShot(cameraSounds[Random.Range(0, cameraSounds.Length)]);
         blackScreen.SendMessage("ScreenFlash");
 
         tookPicture = true;
@@ -68,7 +73,7 @@ public class Paparazzi : MonoBehaviour
 
     private bool CheckIfPlayerInCone()
     {
-        return false;
+        return true;
     }
     
     private bool CanSeePlayer()
