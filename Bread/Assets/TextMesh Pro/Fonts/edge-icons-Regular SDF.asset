@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!28 &-2783892442264651738
+--- !u!28 &-7011958660204646845
 Texture2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -53,10 +53,10 @@ MonoBehaviour:
   m_Name: edge-icons-Regular SDF
   m_EditorClassIdentifier: 
   hashCode: 1567535888
-  material: {fileID: 7761594278368528086}
+  material: {fileID: 4794423442436095985}
   materialHashCode: 643031707
   m_Version: 1.1.0
-  m_SourceFontFileGUID: 3dd4b02ddadbe494aaf4ec8c6f3e037c
+  m_SourceFontFileGUID: f751c508bbd3627479b3af09fc0f4c99
   m_SourceFontFile_EditorRef: {fileID: 0}
   m_SourceFontFile: {fileID: 0}
   m_AtlasPopulationMode: 0
@@ -155,7 +155,7 @@ MonoBehaviour:
     m_GlyphIndex: 94
     m_Scale: 1
   m_AtlasTextures:
-  - {fileID: -2783892442264651738}
+  - {fileID: -7011958660204646845}
   m_AtlasTextureIndex: 0
   m_UsedGlyphRects:
   - m_X: 0
@@ -226,7 +226,7 @@ MonoBehaviour:
   m_FallbackFontAssetTable: []
   m_CreationSettings:
     sourceFontFileName: 
-    sourceFontFileGUID: 3dd4b02ddadbe494aaf4ec8c6f3e037c
+    sourceFontFileGUID: f751c508bbd3627479b3af09fc0f4c99
     pointSizeSamplingMode: 0
     pointSize: 268
     padding: 5
@@ -269,7 +269,7 @@ MonoBehaviour:
   boldSpacing: 7
   italicStyle: 35
   tabSize: 10
---- !u!21 &7761594278368528086
+--- !u!21 &4794423442436095985
 Material:
   serializedVersion: 6
   m_ObjectHideFlags: 0
@@ -277,7 +277,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: edge-icons-Regular SDF Material
-  m_Shader: {fileID: 4800000, guid: 68e6db2ebdc24f95958faec2be5558d6, type: 3}
+  m_Shader: {fileID: 4800000, guid: 81db2c3657147a54193571d2d62660d1, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -301,7 +301,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: -2783892442264651738}
+        m_Texture: {fileID: -7011958660204646845}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _OutlineTex:
