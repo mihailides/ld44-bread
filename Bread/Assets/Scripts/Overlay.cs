@@ -20,7 +20,6 @@ public class Overlay : MonoBehaviour
         {
             StartCoroutine(ScreenFlash());
         }
-
     }
 
     IEnumerator ScreenFlash() 
