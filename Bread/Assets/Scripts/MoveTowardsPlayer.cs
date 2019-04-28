@@ -35,7 +35,7 @@ public class MoveTowardsPlayer : MonoBehaviour
         }
             
         // Rotate towards next cell.
-        transform.up = target;
+        transform.up = Vector3.Lerp(transform.up, target, 0.1f);
             
         // Move towards next cell.
         var movement = Vector3.ClampMagnitude(target, 1);
