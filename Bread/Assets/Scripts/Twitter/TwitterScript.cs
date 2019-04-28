@@ -90,7 +90,7 @@ public class TwitterScript : MonoBehaviour
     
     private TwitterItem GenerateTwitterItem(ShuffleBag<string> bag, bool withImage)
     {
-        string famousPerson = "FamousPerson";
+        string famousPerson = StaticData.Name;
 
         // have a start tweet first
         if (!hasStartTweet)
@@ -98,10 +98,12 @@ public class TwitterScript : MonoBehaviour
             bag = startBag;
             hasStartTweet = true;
         }
+
+        string shortName = famousPerson.Replace(" ", "_").Substring(0, Math.Min(famousPerson.Length, 8));
         
         return new TwitterItem
         {
-            Username = String.Format(nameBag.Next(), famousPerson),
+            Username = String.Format(nameBag.Next(), shortName),
             Name = nameGenerator.GenerateRandomFirstAndLastName(),
             Tweet = String.Format(bag.Next(), famousPerson),
             Timestamp = DateTime.Now,

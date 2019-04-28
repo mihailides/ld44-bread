@@ -179,8 +179,8 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_text: Enter your name...
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: f3e1935e2297517448758c93ecc38c42, type: 2}
-  m_sharedMaterial: {fileID: 3651420157151982907, guid: f3e1935e2297517448758c93ecc38c42,
+  m_fontAsset: {fileID: 11400000, guid: 5804b702a711b934083cdc25810a619e, type: 2}
+  m_sharedMaterial: {fileID: 3908332676451587805, guid: 5804b702a711b934083cdc25810a619e,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -422,7 +422,7 @@ MonoBehaviour:
   m_CaretWidth: 1
   m_ReadOnly: 0
   m_RichText: 1
-  m_GlobalFontAsset: {fileID: 11400000, guid: 2b64e9cd971d04a4eb69e3c63f0c8471, type: 2}
+  m_GlobalFontAsset: {fileID: 0}
   m_OnFocusSelectAll: 1
   m_ResetOnDeActivation: 1
   m_RestoreOriginalTextOnEscape: 1
@@ -745,8 +745,8 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_text: "\u200B"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: f3e1935e2297517448758c93ecc38c42, type: 2}
-  m_sharedMaterial: {fileID: 3651420157151982907, guid: f3e1935e2297517448758c93ecc38c42,
+  m_fontAsset: {fileID: 11400000, guid: 5804b702a711b934083cdc25810a619e, type: 2}
+  m_sharedMaterial: {fileID: 3908332676451587805, guid: 5804b702a711b934083cdc25810a619e,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -1108,8 +1108,8 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_text: OK!
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: f3e1935e2297517448758c93ecc38c42, type: 2}
-  m_sharedMaterial: {fileID: 3651420157151982907, guid: f3e1935e2297517448758c93ecc38c42,
+  m_fontAsset: {fileID: 11400000, guid: 5804b702a711b934083cdc25810a619e, type: 2}
+  m_sharedMaterial: {fileID: 3908332676451587805, guid: 5804b702a711b934083cdc25810a619e,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
