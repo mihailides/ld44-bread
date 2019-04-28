@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using Twitter;
@@ -54,8 +55,17 @@ public class TwitterScript : MonoBehaviour
         originalTweet = GameObject.Find("Tweet");
 
         AddTweet(GenerateTwitterItem(startBag, false));
+
+        StartCoroutine(test());
     }
 
+    IEnumerator test()
+    {
+        yield return new WaitForSeconds(5);
+       
+        AddDesperationTweet();
+    }
+    
     void Update()
     {
         
@@ -85,6 +95,7 @@ public class TwitterScript : MonoBehaviour
         contents.GetComponent<TMP_Text>().text = item.Tweet;
 
         newTweet.transform.SetParent(feed.transform, false);
+        newTweet.transform.SetAsFirstSibling();
     }
     
     private TwitterItem GenerateTwitterItem(ShuffleBag<string> bag, bool withImage)
