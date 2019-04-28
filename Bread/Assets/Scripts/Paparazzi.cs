@@ -4,23 +4,35 @@ using Random = System.Random;
 public class Paparazzi : MonoBehaviour
 {
     public float lockOnTimeout = 1;
-    private bool tookPicture;
+    public float coneAngle = 45;
+    public float maxRotation = 15;
+    public bool rotate = true;
+    public Component player;
+
     private Random rand;
     private float timer;
-    
+    private float originalRotation;
     private GameObject blackScreen;
+    
+    private bool tookPicture;
 
     void Start()
     {
         timer = 0.0f;
         rand = new Random();
-        
         blackScreen = GameObject.Find("BlackScreen");
+        originalRotation = transform.eulerAngles.z;
     }
 
     void FixedUpdate() 
-    {        
+    {
         timer += Time.deltaTime;
+
+        if (rotate)
+        {
+            transform.rotation = Quaternion.Euler(0f, 0f, maxRotation * Mathf.Sin(Time.time) + originalRotation);
+        }
+
         if (timer > lockOnTimeout && !tookPicture) 
         {
             timer -= lockOnTimeout;
@@ -29,20 +41,17 @@ public class Paparazzi : MonoBehaviour
 
             if (lockedOn)
             {
-                Debug.Log("Locked on...");
-
+                var isInCone = CheckIfPlayerInCone();
                 var canSee = CanSeePlayer();
 
-                Debug.Log("Looking for player: " + canSee);
-
-                if (canSee)
+                if (canSee && isInCone)
                 {
                     TakePhotoOfPlayer(true);
                 }
             }
         }      
     }
-
+    
     private void TakePhotoOfPlayer(bool sendTweet)
     {
         transform.rotation = Quaternion.AngleAxis(GetAngleOfPlayer(), Vector3.forward);
@@ -57,17 +66,20 @@ public class Paparazzi : MonoBehaviour
         tookPicture = true;
     }
 
+    private bool CheckIfPlayerInCone()
+    {
+        return false;
+    }
+    
     private bool CanSeePlayer()
     {
-        var player = GameObject.Find("Player");
         return !Physics2D.Linecast(transform.position, player.transform.position, 5);
     }
 
     private float GetAngleOfPlayer()
     {
-        var player = GameObject.Find("Player");
         Vector3 dir = player.transform.position - transform.position;
-        return Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg + 90;
+        return Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg - 90;
     }
     
     private double GetChanceToLockOn()
