@@ -26,6 +26,8 @@ public class Player : MonoBehaviour
     public float startingLossPercentage = 10;
     public GameObject moneyTextObject;
     private TMPro.TextMeshProUGUI moneyText;
+    
+    private TwitterScript twitterScript;
 
     void Start()
     {
@@ -34,6 +36,8 @@ public class Player : MonoBehaviour
         currentMoney = startingMoney;
         moneyText = moneyTextObject.GetComponent<TMPro.TextMeshProUGUI>();
         moneyText.text = "$" + startingMoney.ToString();
+        
+        twitterScript = GameObject.Find("UI/TwitterScriptObject").GetComponent<TwitterScript>();
     }
 
     void FixedUpdate()
@@ -84,6 +88,12 @@ public class Player : MonoBehaviour
         {
             currentDesperation += periodicDesperationRate;
         }
+
+        if (currentDesperation % 10 == 0)
+        {
+            twitterScript.SendMessage("AddDesperationTweet");
+        }
+        
         desperationSlider.value = currentDesperation;
     }
 
