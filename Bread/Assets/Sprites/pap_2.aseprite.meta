@@ -7,10 +7,10 @@ ScriptedImporter:
   userData: 
   assetBundleName: 
   assetBundleVariant: 
-  script: {fileID: 11500000, guid: 064230c52bd8947b28d5fb824f1e6bb4, type: 3}
+  script: {fileID: 11500000, guid: 7269a834893c9ac46909d89663ccc1c3, type: 3}
   textureSettings:
     textureType: 8
-    pixelsPerUnit: 16
+    pixelsPerUnit: 32
     meshType: 1
     extrudeEdges: 1
     spritePivot: {x: 0.5, y: 0.5}
@@ -21,5 +21,5 @@ ScriptedImporter:
     tilePadding: {x: 0, y: 0}
     tileOffset: {x: 0, y: 0}
   animationSettings: []
-  atlas: {fileID: -8328923581568760697, guid: a752fccc3fca46244917b1c2c9f2a6d6, type: 3}
+  atlas: {instanceID: 0}
   importType: 0
