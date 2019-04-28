@@ -96,6 +96,7 @@ public class TwitterScript : MonoBehaviour
         if (!hasStartTweet)
         {
             bag = startBag;
+            hasStartTweet = true;
         }
         
         return new TwitterItem
