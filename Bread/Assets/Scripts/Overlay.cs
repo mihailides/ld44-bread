@@ -5,13 +5,11 @@ using UnityEngine.UI;
 
 public class Overlay : MonoBehaviour
 {
-    private float timer;
     public Image image;
 
     void Start()
     {
         image = GetComponent<Image>();
-        timer = 0.0f;
     }
 
     void Update()
