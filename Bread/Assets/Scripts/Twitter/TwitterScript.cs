@@ -32,7 +32,20 @@ public class TwitterScript : MonoBehaviour
         "hot tip: just saw {0} leave",
         "{0} is so cancelled right now",
         "can't believe how different {0} looks",
-        "{0} SPOTTED"
+        "{0} SPOTTED",
+        "OMG!! is anyone else seeing these pictures of {0}??",
+        "{0} rn: me after not leaving my dungeon for 5 years",
+        "oh {0}... how the mighty have fallen",
+        "I heard there's a picture of {0} eating out of a bin.",
+        "no words @{0}",
+        "HAHAHA what a disgrace!!! @{0}",
+        "Reports say stock value of {0} is decreasing rapidly.",
+        "{0} is really looking like a mess..",
+        "I wonder what happened to {0}?",
+        "what a disaster {0} is right now!",
+        "i used to be so jealous of {0}.. LOL!",
+        "yikes. @{0}",
+        "who let this person be famous?? @{0}"
     );
 
     private readonly ShuffleBag<string> nameBag = new ShuffleBag<string>(
