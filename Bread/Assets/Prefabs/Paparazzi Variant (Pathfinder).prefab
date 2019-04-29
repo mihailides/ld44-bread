@@ -1,19 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &157268494082590634
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8474184406407372109}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b9e414e28b59c824dbc412dfe108518e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 0}
-  speed: 1
 --- !u!95 &760122205
 Animator:
   serializedVersion: 3
@@ -33,6 +19,35 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &157268494082590634
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8474184406407372109}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b9e414e28b59c824dbc412dfe108518e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 0}
+  speed: 1
+  moving: 1
+--- !u!114 &5294661
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8474184406407372109}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a005197ab7fa3244b9eb076f7a240e70, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  grid: {fileID: 0}
+  drawPath: 0
 --- !u!1001 &2139874396203348120
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -100,17 +115,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7505255087392402900, guid: 4dad44bf7b363ac49be8a749ac6b38d0,
+        type: 3}
+      propertyPath: rotate
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7505255087392402902, guid: 4dad44bf7b363ac49be8a749ac6b38d0,
         type: 3}
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 4964535217571270312, guid: 10dd744cb447105429a3eae7bf77db72,
         type: 3}
-    - target: {fileID: 7505255087392402900, guid: 4dad44bf7b363ac49be8a749ac6b38d0,
-        type: 3}
-      propertyPath: rotate
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4dad44bf7b363ac49be8a749ac6b38d0, type: 3}
 --- !u!1 &8474184406407372109 stripped
