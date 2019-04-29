@@ -18,5 +18,5 @@ public static class StaticData
         }
     }
 
-    public static int NetWorth { get; set; }
+    public static float NetWorth { get; set; }
 }

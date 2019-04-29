@@ -29,6 +29,6 @@ public class CharacterSceneManager : MonoBehaviour
 
         StaticData.Name = text;
         
-        UnityEngine.SceneManagement.SceneManager.LoadScene(3);
+        UnityEngine.SceneManagement.SceneManager.LoadScene(2);
     }
 }

@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class CallEndGame : MonoBehaviour
 {
+    public GameObject player;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -18,6 +20,7 @@ public class CallEndGame : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        Debug.Log("Trigger end game");
+        StaticData.NetWorth = player.GetComponent<Player>().currentMoney;
+        UnityEngine.SceneManagement.SceneManager.LoadScene(3);
     }
 }
