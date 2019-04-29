@@ -17,4 +17,6 @@ public static class StaticData
             PLAYER_NAME = value;
         }
     }
+
+    public static int NetWorth { get; set; }
 }
