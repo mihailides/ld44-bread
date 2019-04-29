@@ -121,6 +121,6 @@ public class Paparazzi : MonoBehaviour
     
     private double GetChanceToLockOn()
     {
-        return Math.Min(0.4, playerScript.currentDesperation / 100);
+        return Math.Max(0.4, playerScript.currentDesperation / 100);
     }
 }
