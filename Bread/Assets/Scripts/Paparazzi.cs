@@ -25,8 +25,8 @@ public class Paparazzi : MonoBehaviour
 
     void Start()
     {
-        timer = 0.0f;
         rand = new System.Random();
+        timer = Random.Range(0, 1);
 
         playerScript = player.GetComponent<Player>();
         blackScreen = GameObject.Find("BlackScreen");
