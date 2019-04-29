@@ -1,4 +1,6 @@
+using System;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class Paparazzi : MonoBehaviour
 {
@@ -9,6 +11,7 @@ public class Paparazzi : MonoBehaviour
     public bool rotate;
     public Component player;
 
+    private Player playerScript;
     private System.Random rand;
     private float timer;
     private float originalRotation;
@@ -24,6 +27,8 @@ public class Paparazzi : MonoBehaviour
     {
         timer = 0.0f;
         rand = new System.Random();
+
+        playerScript = player.GetComponent<Player>();
         blackScreen = GameObject.Find("BlackScreen");
         twitterScript = GameObject.Find("UI/TwitterScriptObject").GetComponent<TwitterScript>();
         moveTowardsPlayer = GetComponent<MoveTowardsPlayer>();
@@ -116,7 +121,6 @@ public class Paparazzi : MonoBehaviour
     
     private double GetChanceToLockOn()
     {
-        // TODO: weight this depending on desperation
-        return 0.5;
+        return Math.Min(0.4, playerScript.currentDesperation / 100);
     }
 }
