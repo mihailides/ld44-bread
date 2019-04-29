@@ -14,6 +14,7 @@ public class Paparazzi : MonoBehaviour
     private Player playerScript;
     private System.Random rand;
     private float timer;
+    private float restartTimer;
     private float originalRotation;
     private GameObject blackScreen;
     private TwitterScript twitterScript;
@@ -63,7 +64,18 @@ public class Paparazzi : MonoBehaviour
                     TakePhotoOfPlayer(true);
                 }
             }
-        }      
+        }
+        else if (tookPicture)
+        {
+            restartTimer += Time.deltaTime;
+        }
+
+        if (restartTimer >= 2)
+        {
+            restartTimer = 0;
+            tookPicture = false;
+            timer = 0;
+        }
     }
     
     private void TakePhotoOfPlayer(bool sendTweet)
