@@ -75,6 +75,11 @@ public class Paparazzi : MonoBehaviour
             restartTimer = 0;
             tookPicture = false;
             timer = 0;
+
+            if (moveTowardsPlayer != null)
+            {
+                moveTowardsPlayer.moving = true;
+            }
         }
     }
     
