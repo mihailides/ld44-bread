@@ -7,7 +7,10 @@ public class MoveTowardsPlayer : MonoBehaviour
     public Component player;
     public float speed;
     public bool moving = true;
-    
+
+    private List<Node> findPath;
+    private float nextTime = 0;
+
     private Animator animator;
     private AStarPathfinding aStarPathfinding;
     
@@ -26,8 +29,12 @@ public class MoveTowardsPlayer : MonoBehaviour
             animator.SetBool("moving", false);
             return;
         }
-        
-        var findPath = aStarPathfinding.FindPath(transform.position, player.transform.position);
+
+        if (Time.time >= nextTime)
+        {
+            findPath = aStarPathfinding.FindPath(transform.position, player.transform.position);
+            nextTime += Random.Range(0.5f, 1.5f);
+        }
 
         // Nowhere to path-find.
         if (findPath.Count == 0) return;
@@ -41,6 +48,9 @@ public class MoveTowardsPlayer : MonoBehaviour
         {
             worldPoint = aStarPathfinding.WorldPointFromNode(findPath[1]);
             target = worldPoint - transform.position;
+            
+            // Remove the now-too-close cell from the list.
+            findPath.RemoveAt(0);
         }
             
         // Rotate towards next cell.
