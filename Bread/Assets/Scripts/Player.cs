@@ -109,6 +109,7 @@ public class Player : MonoBehaviour
         if (currentMoney < 0)
         {
             currentMoney = 0;
+            SetMoneyText(currentMoney);
             return;
         }
         // Maybe take in whether it was a chaser or a static mob? And change val based on that.
@@ -118,11 +119,11 @@ public class Player : MonoBehaviour
         }
         else if (currentMoney < 100) 
         {
-            currentMoney -= 3.75f;
+            currentMoney -= 6.62f;
         } 
         else 
         {
-            currentMoney -= currentMoney / startingLossPercentage;
+            currentMoney = currentMoney / startingLossPercentage;
         }
 
         // Update desperation

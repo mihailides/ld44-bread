@@ -7182,7 +7182,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_text: 
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: b17653f7d068a1f46a03055730c3c89b, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 5804b702a711b934083cdc25810a619e, type: 2}
   m_sharedMaterial: {fileID: -471554196219827239, guid: b17653f7d068a1f46a03055730c3c89b,
     type: 2}
   m_fontSharedMaterials: []

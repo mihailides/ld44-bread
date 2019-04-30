@@ -49,6 +49,10 @@ public class EndingScript : MonoBehaviour
             {
                 messageTextTMP.text = "Sorry... but you don't have enough money to buy this bread.";
             }
+            else if (StaticData.NetWorth >= 1000000)
+            {
+                messageTextTMP.text = "Here's your rye bread!";
+            }
             else
             {
                 messageTextTMP.text = "Here's your bread!";
@@ -71,6 +75,11 @@ public class EndingScript : MonoBehaviour
         {
             player.transform.position += Vector3.right * 3 * Time.deltaTime;
             camera.GetComponent<FollowPlayer>().player = null;
+        }
+
+        if (player.transform.position.x > 25)
+        {
+            UnityEngine.SceneManagement.SceneManager.LoadScene(0);
         }
     }
 }
