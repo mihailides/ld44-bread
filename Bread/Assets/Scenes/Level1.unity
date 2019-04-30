@@ -51,8 +51,8 @@ LightmapSettings:
     m_IndirectOutputScale: 1
     m_AlbedoBoost: 1
     m_EnvironmentLightingMode: 0
-    m_EnableBakedLightmaps: 1
-    m_EnableRealtimeLightmaps: 1
+    m_EnableBakedLightmaps: 0
+    m_EnableRealtimeLightmaps: 0
   m_LightmapEditorSettings:
     serializedVersion: 12
     m_Resolution: 2
@@ -8186,14 +8186,14 @@ PrefabInstance:
       propertyPath: maxRotation
       value: 45
       objectReference: {fileID: 0}
-    - target: {fileID: 1850361040, guid: 4dad44bf7b363ac49be8a749ac6b38d0, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 6674843457675308409, guid: 4dad44bf7b363ac49be8a749ac6b38d0,
         type: 3}
       propertyPath: m_Layer
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1850361040, guid: 4dad44bf7b363ac49be8a749ac6b38d0, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 506920220, guid: 4dad44bf7b363ac49be8a749ac6b38d0, type: 3}
@@ -8547,14 +8547,14 @@ PrefabInstance:
       propertyPath: maxRotation
       value: 30
       objectReference: {fileID: 0}
-    - target: {fileID: 1850361040, guid: 4dad44bf7b363ac49be8a749ac6b38d0, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 6674843457675308409, guid: 4dad44bf7b363ac49be8a749ac6b38d0,
         type: 3}
       propertyPath: m_Layer
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1850361040, guid: 4dad44bf7b363ac49be8a749ac6b38d0, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 506920220, guid: 4dad44bf7b363ac49be8a749ac6b38d0, type: 3}
@@ -20607,14 +20607,14 @@ PrefabInstance:
       propertyPath: maxRotation
       value: 45
       objectReference: {fileID: 0}
-    - target: {fileID: 1850361040, guid: 4dad44bf7b363ac49be8a749ac6b38d0, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 6674843457675308409, guid: 4dad44bf7b363ac49be8a749ac6b38d0,
         type: 3}
       propertyPath: m_Layer
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1850361040, guid: 4dad44bf7b363ac49be8a749ac6b38d0, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 506920220, guid: 4dad44bf7b363ac49be8a749ac6b38d0, type: 3}
@@ -24849,14 +24849,14 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 1909379306}
-    - target: {fileID: 1850361040, guid: 4dad44bf7b363ac49be8a749ac6b38d0, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 6674843457675308409, guid: 4dad44bf7b363ac49be8a749ac6b38d0,
         type: 3}
       propertyPath: m_Layer
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1850361040, guid: 4dad44bf7b363ac49be8a749ac6b38d0, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 506920220, guid: 4dad44bf7b363ac49be8a749ac6b38d0, type: 3}
@@ -33177,14 +33177,14 @@ PrefabInstance:
       propertyPath: maxRotation
       value: 30
       objectReference: {fileID: 0}
-    - target: {fileID: 1850361040, guid: 4dad44bf7b363ac49be8a749ac6b38d0, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 6674843457675308409, guid: 4dad44bf7b363ac49be8a749ac6b38d0,
         type: 3}
       propertyPath: m_Layer
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1850361040, guid: 4dad44bf7b363ac49be8a749ac6b38d0, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 506920220, guid: 4dad44bf7b363ac49be8a749ac6b38d0, type: 3}
@@ -63228,14 +63228,14 @@ PrefabInstance:
       propertyPath: maxRotation
       value: 45
       objectReference: {fileID: 0}
-    - target: {fileID: 1850361040, guid: 4dad44bf7b363ac49be8a749ac6b38d0, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 6674843457675308409, guid: 4dad44bf7b363ac49be8a749ac6b38d0,
         type: 3}
       propertyPath: m_Layer
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1850361040, guid: 4dad44bf7b363ac49be8a749ac6b38d0, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 506920220, guid: 4dad44bf7b363ac49be8a749ac6b38d0, type: 3}
@@ -72419,14 +72419,14 @@ PrefabInstance:
       propertyPath: maxRotation
       value: 30
       objectReference: {fileID: 0}
-    - target: {fileID: 1850361040, guid: 4dad44bf7b363ac49be8a749ac6b38d0, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 6674843457675308409, guid: 4dad44bf7b363ac49be8a749ac6b38d0,
         type: 3}
       propertyPath: m_Layer
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1850361040, guid: 4dad44bf7b363ac49be8a749ac6b38d0, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 506920220, guid: 4dad44bf7b363ac49be8a749ac6b38d0, type: 3}
@@ -77706,14 +77706,14 @@ PrefabInstance:
       propertyPath: maxRotation
       value: 30
       objectReference: {fileID: 0}
-    - target: {fileID: 1850361040, guid: 4dad44bf7b363ac49be8a749ac6b38d0, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 6674843457675308409, guid: 4dad44bf7b363ac49be8a749ac6b38d0,
         type: 3}
       propertyPath: m_Layer
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1850361040, guid: 4dad44bf7b363ac49be8a749ac6b38d0, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 506920220, guid: 4dad44bf7b363ac49be8a749ac6b38d0, type: 3}
@@ -90541,14 +90541,14 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 1909379306}
-    - target: {fileID: 1850361040, guid: 4dad44bf7b363ac49be8a749ac6b38d0, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 6674843457675308409, guid: 4dad44bf7b363ac49be8a749ac6b38d0,
         type: 3}
       propertyPath: m_Layer
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1850361040, guid: 4dad44bf7b363ac49be8a749ac6b38d0, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 506920220, guid: 4dad44bf7b363ac49be8a749ac6b38d0, type: 3}
@@ -98495,14 +98495,14 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 1909379306}
-    - target: {fileID: 1850361040, guid: 4dad44bf7b363ac49be8a749ac6b38d0, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 6674843457675308409, guid: 4dad44bf7b363ac49be8a749ac6b38d0,
         type: 3}
       propertyPath: m_Layer
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1850361040, guid: 4dad44bf7b363ac49be8a749ac6b38d0, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 506920220, guid: 4dad44bf7b363ac49be8a749ac6b38d0, type: 3}
@@ -100744,14 +100744,14 @@ PrefabInstance:
       propertyPath: maxRotation
       value: 45
       objectReference: {fileID: 0}
-    - target: {fileID: 1850361040, guid: 4dad44bf7b363ac49be8a749ac6b38d0, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 6674843457675308409, guid: 4dad44bf7b363ac49be8a749ac6b38d0,
         type: 3}
       propertyPath: m_Layer
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1850361040, guid: 4dad44bf7b363ac49be8a749ac6b38d0, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 506920220, guid: 4dad44bf7b363ac49be8a749ac6b38d0, type: 3}
