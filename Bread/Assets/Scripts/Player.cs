@@ -100,6 +100,17 @@ public class Player : MonoBehaviour
     /** Use this function when a photo is taken. Desperation decreases, but so does money. */
     public void LoseDesperationAndMoney() 
     {
+        // IM LAZYYYYYYYYYY
+        if (currentMoney == 0) 
+        {
+            return;
+        }
+        // IM LAZZZZZZZZY
+        if (currentMoney < 0)
+        {
+            currentMoney = 0;
+            return;
+        }
         // Maybe take in whether it was a chaser or a static mob? And change val based on that.
         if (currentMoney < 1000) 
         {
