@@ -21,7 +21,7 @@ public class Player : MonoBehaviour
     public float maxDesperation = 100;
 
     /** Money values */
-    public float startingMoney = 1000000;
+    public float startingMoney = 100000;
     public float currentMoney;
     public float startingLossPercentage = 10;
     public GameObject moneyTextObject;
@@ -100,27 +100,29 @@ public class Player : MonoBehaviour
     /** Use this function when a photo is taken. Desperation decreases, but so does money. */
     public void LoseDesperationAndMoney() 
     {
-        // IM LAZYYYYYYYYYY
         if (currentMoney == 0) 
         {
             return;
         }
-        // IM LAZZZZZZZZY
-        if (currentMoney < 0)
-        {
-            currentMoney = 0;
-            SetMoneyText(currentMoney);
-            return;
-        }
-        // Maybe take in whether it was a chaser or a static mob? And change val based on that.
-        if (currentMoney < 1000) 
-        {
-            currentMoney -= 100;
-        }
         else if (currentMoney < 100) 
         {
-            currentMoney -= 6.62f;
+            float possibleMoneyLoss = currentMoney - 6.62f;
+            if (possibleMoneyLoss <  0) {
+                currentMoney = 0;
+            } else {
+                currentMoney -= 6.62f;
+            }
         } 
+        // Maybe take in whether it was a chaser or a static mob? And change val based on that.
+        else if (currentMoney < 1000) 
+        {
+            float possibleMoneyLoss = currentMoney - 100;
+            if (possibleMoneyLoss <  0) {
+                currentMoney = 0;
+            } else {
+                currentMoney -= 100;
+            }
+        }
         else 
         {
             currentMoney = currentMoney / startingLossPercentage;
